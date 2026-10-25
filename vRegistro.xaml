@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eclavijoT3.vRegistro"
+             Title="vRegistro">
+
+    <ContentPage.Resources>
+
+        <Style x:Key="EstiloTitulo"
+           TargetType="Label">
+            <Setter Property="BackgroundColor" Value="#1E3A8A"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+
+
+        <!-- Entradas -->
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="#4a70bd"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!-- Picker -->
+        <Style TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="#4a70bd"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <!-- Botones -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#2563EB"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="HeightRequest" Value="50"/>
+        </Style>
+        
+
+    </ContentPage.Resources>
+
+    <VerticalStackLayout  
+        Padding="25"
+    Spacing="15"
+    BackgroundColor="#b1c2e3" >
+        
+        <Label Text="DATOS DEL CONTACTO"
+       Style="{StaticResource EstiloTitulo}"/>
+
+        <Image
+    Source="contacto.png"
+    HeightRequest="120"
+    WidthRequest="120"
+    HorizontalOptions="Center"/>
+
+        <Picker x:Name="pkIdentificacion"
+        Title="Seleccione identificación">
+            <Picker.Items>
+                <x:String>CI</x:String>
+                <x:String>RUC</x:String>
+                <x:String>Pasaporte</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="txtNumero"
+       Placeholder="Número identificación"/>
+
+        <Entry x:Name="txtNombres"
+       Placeholder="Nombres"/>
+
+        <Entry x:Name="txtApellidos"
+       Placeholder="Apellidos"/>
+
+        <DatePicker x:Name="dtFecha"/>
+
+        <Entry x:Name="txtCorreo"
+       Placeholder="Correo"/>
+
+        <Entry x:Name="txtSalario"
+       Placeholder="Salario"
+       Keyboard="Numeric"/>
+
+
+        <Button
+    Text="Guardar"
+    Clicked="Button_Clicked"/>
+        
+        
+
+
+    </VerticalStackLayout>
+</ContentPage>
